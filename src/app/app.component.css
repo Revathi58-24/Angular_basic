@@ -1,0 +1,41 @@
+/* Add the background image to the form */
+form {
+    background-image: url('https://png.pngtree.com/background/20210710/original/pngtree-floral-blue-flower-florist-plant-background-picture-image_1052937.jpg');
+    background-size: cover;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Align labels and input fields */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 5px;
+  }
+  input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  width: 200px; /* Adjust the width as needed */
+  padding: 5px;
+  font-size: 14px;
+}
+select,
+input[type="date"] {
+  width: 200px; /* Adjust the width as needed */
+  padding: 5px;
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+  

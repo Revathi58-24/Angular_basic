@@ -1,0 +1,98 @@
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="fullName">Name:</label>
+      <input type="text" id="fullName" formControlName="fullName">
+      <div *ngIf="registrationForm.get('fullName')?.errors && registrationForm.get('fullName')?.dirty">
+        <div *ngIf="registrationForm.get('fullName')?.errors?.['required']">Full name is required.</div>
+      </div>
+    </div><br>
+  
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+      <div *ngIf="registrationForm.get('email')?.errors && registrationForm.get('email')?.dirty">
+        <div *ngIf="registrationForm.get('email')?.errors?.['required']">Email is required.</div>
+        <div *ngIf="registrationForm.get('email')?.errors?.['email']">Invalid email format.</div>
+      </div>
+    </div><br>
+  
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password">
+      <div *ngIf="registrationForm.get('password')?.errors && registrationForm.get('password')?.dirty">
+        <div *ngIf="registrationForm.get('password')?.errors?.['required']">Password is required.</div>
+        <div *ngIf="registrationForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long.</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label for="dateOfBirth">Date of Birth:</label>
+      <input type="date" id="dateOfBirth" formControlName="dateOfBirth">
+      <div *ngIf="registrationForm.get('dateOfBirth')?.errors && registrationForm.get('dateOfBirth')?.dirty">
+        <div *ngIf="registrationForm.get('dateOfBirth')?.errors?.['required']">Date of Birth is required.</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select id="gender" formControlName="gender">
+        <option value="" disabled>Select gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <div *ngIf="registrationForm.get('gender')?.errors && registrationForm.get('gender')?.dirty">
+        <div *ngIf="registrationForm.get('gender')?.errors?.['required']">Gender is required.</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label for="mobileNumber">Mobile Number:</label>
+      <input type="text" id="mobileNumber" formControlName="mobileNumber">
+      <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)">
+        <div *ngIf="mobileNumber.errors?.['required']">Mobile number is required.</div>
+        <div *ngIf="mobileNumber.errors?.['pattern']">Invalid mobile number format. It should be a 10-digit number.</div>
+      </div>
+    </div> <br>   
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <select id="country" formControlName="country">
+        <option value="" disabled>Select country</option>
+        <option value="country1">Country 1</option>
+        <option value="country2">Country 2</option>
+        <option value="country3">Country 3</option>
+        <!-- Add more options for different countries -->
+      </select>
+      <div *ngIf="registrationForm.get('country')?.errors && registrationForm.get('country')?.dirty">
+        <div *ngIf="registrationForm.get('country')?.errors?.['required']">Country is required.</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label for="state">State:</label>
+      <select id="state" formControlName="state">
+        <option value="" disabled>Select state</option>
+        <option value="state1">State 1</option>
+        <option value="state2">State 2</option>
+        <option value="state3">State 3</option>
+        <!-- Add more options for different states -->
+      </select>
+      <div *ngIf="registrationForm.get('state')?.errors && registrationForm.get('state')?.dirty">
+        <div *ngIf="registrationForm.get('state')?.errors?.['required']">State is required.</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" id="city" formControlName="city">
+      <div *ngIf="registrationForm.get('city')?.errors && registrationForm.get('city')?.dirty">
+        <div *ngIf="registrationForm.get('city')?.errors?.['required']">City is required.</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="text" id="address" formControlName="address">
+      <div *ngIf="registrationForm.get('address')?.errors && registrationForm.get('address')?.dirty">
+        <div *ngIf="registrationForm.get('address')?.errors?.['required']">Address is required.</div>
+      </div>
+    </div><br>
+    <button type="submit" [disabled]="registrationForm.invalid" style="background-color:#00008B; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">Register</button>
+
+  </form>
+  
